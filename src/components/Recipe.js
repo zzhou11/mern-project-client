@@ -11,7 +11,7 @@ function Recipe(props) {
 
     const fetchRecipes = () => {
         axios
-            .get(`${API}/api/recipes`)
+            .get(`https://mern-project-server-jhu.herokuapp.com/api/recipes`)
             .then((res) => {
                 if (res.data) {
                     setRecipes(res.data);
