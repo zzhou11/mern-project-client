@@ -3,7 +3,6 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-}
 const API = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000';
 
 
