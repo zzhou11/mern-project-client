@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-const API = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000';
+const API = (process.env.NODE_ENV === 'production') ? 'api' : 'http://localhost:5000/api';
 
 function AddRecipe(props) {
     const [recipeName, setRecipeName] = useState("");
@@ -18,7 +18,7 @@ function AddRecipe(props) {
 
         if (newRecipe.name && newRecipe.name.length > 0) {
             axios
-                .post(`${API}/api/recipes`, newRecipe)
+                .post(`${API}/recipes`, newRecipe)
                 .then((res) => {
                     if (res.data) {
                         console.log("Added recipe successfully, response data: " + JSON.stringify(res.data));

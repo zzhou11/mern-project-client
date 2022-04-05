@@ -3,14 +3,14 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = (process.env.NODE_ENV === 'production') ? '' : 'http://localhost:5000';
+const API = (process.env.NODE_ENV === 'production') ? 'api' : 'http://localhost:5000/api';
 
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = () => {
         axios
-            .get(`${API}/api/recipes`)
+            .get(`${API}/recipes`)
             .then((res) => {
                 if (res.data) {
                     setRecipes(res.data);
@@ -25,7 +25,7 @@ function Recipe(props) {
 
     const deleteRecipe = (id) => {
         axios
-            .delete(`${API}/api/recipes/${id}`)
+            .delete(`${API}/recipes/${id}`)
             .then((res) => {
                 if (res.data) {
                     fetchRecipes();
