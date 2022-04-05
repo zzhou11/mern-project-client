@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-const API = process.env.NODE_ENV === 'production' ? process.env.BASE_URL : 'http://localhost:5000';
+const API = (process.env.NODE_ENV === 'production') ? process.env.REACT_APP_BASE_URL : 'http://localhost:5000';
 
 function AddRecipe(props) {
     const [recipeName, setRecipeName] = useState("");
