@@ -10,7 +10,7 @@ function Recipe(props) {
 
     const fetchRecipes = () => {
         axios
-            .get(`${API}/recipes`)
+            .get(`api/recipes`)
             .then((res) => {
                 if (res.data) {
                     setRecipes(res.data);
