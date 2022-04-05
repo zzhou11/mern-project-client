@@ -3,14 +3,14 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = (process.env.NODE_ENV === 'production') ? '/api' : 'http://localhost:5000/api';
+const API = (process.env.NODE_ENV === 'production') ? 'https://mern-project-server-jhu.herokuapp.com' : 'http://localhost:5000';
 
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = () => {
         axios
-            .get(`${API}/recipes`)
+            .get(`${API}/api/recipes`)
             .then((res) => {
                 if (res.data) {
                     setRecipes(res.data);
@@ -25,7 +25,7 @@ function Recipe(props) {
 
     const deleteRecipe = (id) => {
         axios
-            .delete(`${API}/recipes/${id}`)
+            .delete(`${API}/api/recipes/${id}`)
             .then((res) => {
                 if (res.data) {
                     fetchRecipes();
