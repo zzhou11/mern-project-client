@@ -3,9 +3,7 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-require('dotenv').config();
-
-const API = (process.env.NODE_ENV === 'production') ? process.env.BASE_URL : 'http://localhost:5000';
+const API = (process.env.NODE_ENV === 'production') ? process.env.REACT_APP_BASE_URL : 'http://localhost:5000';
 console.log("API is " + API)
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
