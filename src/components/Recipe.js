@@ -3,8 +3,8 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = "https://mern-project-server-jhu.herokuapp.com";
-
+const API = (process.env.NODE_ENV === 'production') ? 'https://mern-project-server-jhu.herokuapp.com' : 'http://localhost:5000';
+console.log("Running API calls on " + API)
 
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
