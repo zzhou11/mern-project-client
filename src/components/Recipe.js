@@ -3,14 +3,14 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = (process.env.NODE_ENV === 'production') ? 'api' : 'http://localhost:5000/api';
+const API = (process.env.NODE_ENV === 'production') ? '/api' : 'http://localhost:5000/api';
 
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = () => {
         axios
-            .get(`api/recipes`)
+            .get(`${API}/recipes`)
             .then((res) => {
                 if (res.data) {
                     setRecipes(res.data);
