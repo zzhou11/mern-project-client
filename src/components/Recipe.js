@@ -3,7 +3,7 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = process.env.NODE_ENV === 'https://mern-project-server-jhu.herokuapp.com';
+const API = "https://mern-project-server-jhu.herokuapp.com";
 
 
 function Recipe(props) {
