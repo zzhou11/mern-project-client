@@ -3,11 +3,7 @@ import axios from 'axios';
 import ListRecipe from './ListRecipe';
 import {Link} from 'react-router-dom';
 
-const API = (process.env.NODE_ENV === 'production') ? 'https://mern-project-server-jhu.herokuapp.com' : 'http://localhost:5000';
-console.log("NODE ENV is " + process.env.NODE_ENV)
-console.log("Comparison returned " + process.env.NODE_ENV === 'production')
-console.log("Running API calls on " + API)
-
+const API = (process.env.NODE_ENV === 'production') ? '' : 'http://localhost:5000';
 
 function Recipe(props) {
     const [recipes, setRecipes] = useState([]);
